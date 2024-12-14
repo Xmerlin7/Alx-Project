@@ -8,8 +8,8 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {
   res.send(" يا عرص");
 });
-app.post("/post", (req, res) => {
-  res.send("hell");
+app.post("/post/:n1/:n2", (req, res) => {
+  res.send(`the numbers are ${req.params.n1} and ${req.params.n2}`);
 });
 app.listen(3000, () => {
   console.log("Server running on port 3000");
