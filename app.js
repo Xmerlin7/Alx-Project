@@ -3,7 +3,7 @@ const res = require("express/lib/response");
 const app = express();
 app.use(express.json());
 app.get("/", (req, res) => {
-  res.send("!شكرا على المساعدة يا عرص");
+  res.send("Welcome Home, Mate")
 });
 app.get("/home", (req, res) => {
   res.send(" يا عرص");
