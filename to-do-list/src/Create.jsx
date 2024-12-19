@@ -1,9 +1,11 @@
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 
 const Create = () => {
   return (
     <div>
-       Your JSX here 
+      <input type="text" name="" id="" />
+      <button type="button">Add </button>
     </div>
   );
 };
