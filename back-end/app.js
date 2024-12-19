@@ -8,6 +8,15 @@ app.get("/", (req, res) => {
   console.log(req);
   return res.status(234).send("Book sotre with MERN ");
 });
-app.listen(PORT, (req, res) => {
-  console.log(`App is listening on port: ${PORT}`);
-});
+
+moongoose
+  .connect(mongoDBURL)
+  .then(() => {
+    console.log("App connected to DB");
+    app.listen(PORT, (req, res) => {
+      console.log(`App is listening on port: ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
