@@ -6,7 +6,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   console.log(req);
-  return res.status(234).send("Book sotre with MERN stack");
+  return res.status(234).send("Book sotre with MERN ");
 });
 app.listen(PORT, (req, res) => {
   console.log(`App is listening on port: ${PORT}`);
