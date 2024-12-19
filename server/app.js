@@ -1,6 +1,9 @@
-const express = require('express');
+const express = require("express");
 const res = require("express/lib/response");
+const cors = require("cors");
 const app = express();
+app.use(cors())
+app.use(express.json())
 const moongo = require("mongoose");
 moongo
   .connect(
@@ -22,6 +25,7 @@ app.get("/home", (req, res) => {
 app.post("/post", (req, res) => {
   res.send(`hello ${req.body.name} your age is ${req.query.age}`);
 });
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
