@@ -17,8 +17,10 @@ moongo
     console.log("couldn't connect tho the DB", e);
   });
 app.use(express.json());
-app.get("/", (req, res) => {
-  res.send("Welcome Home, Mate");
+app.get("/get", (req, res) => {
+  TodoModel.find()
+  .then(result => res.json(result))
+  .catch(err => res.json(err))
 });
 
 app.post("/add", (req, res) => {
