@@ -4,7 +4,7 @@ import Create from "./Create";
 const Home = () => {
   const [todos, setTodos] = useState([]);
   return (
-    <div>
+    <div className="home">
       <h2>Todo List</h2>
       <Create />
       {todos.length === 0 ? (
