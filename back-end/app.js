@@ -1,7 +1,7 @@
 import express from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import moongoose from "mongoose";
-
+import { Book } from "./models/booksModel.js";
 const app = express();
 
 app.get("/", (req, res) => {
