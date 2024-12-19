@@ -8,6 +8,6 @@ app.get("/", (req, res) => {
   console.log(req);
   return res.status(234).send("Book sotre with MERN stack");
 });
-app.listen(PORT, () => {
+app.listen(PORT, (req, res) => {
   console.log(`App is listening on port: ${PORT}`);
 });
