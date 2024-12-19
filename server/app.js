@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const moongo = require("mongoose");
+const TodoModel = require('./models/todo')
 moongo
   .connect(
     "mongodb+srv://seifahmedjr7:WhGZw792pHX8xAHP@cluster0.6trnl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
