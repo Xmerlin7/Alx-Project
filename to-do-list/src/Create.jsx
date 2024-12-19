@@ -5,7 +5,7 @@ import "./App.css";
 const Create = () => {
   const [task, setTask] = useState([]);
   const handleAdd = () => {
-    axios.post('http://localhost:3000/add'. {task: task})
+    axios.post('http://localhost:3000/add', {task: task})
     .then(res => console.log(res))
     .catch(err =>console.log(err))
   };

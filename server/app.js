@@ -23,6 +23,10 @@ app.get("/", (req, res) => {
 
 app.post("/add", (req, res) => {
   const task = req.body.task;
+  TodoModel.create({
+    task: task
+  }).then(result => res.json(result))
+  .catch(err => res.json(err))
 });
 
 app.listen(3000, () => {
