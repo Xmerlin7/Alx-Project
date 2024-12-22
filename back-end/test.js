@@ -1,5 +1,5 @@
 const arr = [1, 2, 3, 4, 5, 43];
-console.log(binarySerach(arr, 43));
+console.log(binarySerach(arr, []));
 
 function binarySerach(arr, num) {
   const len = arr.length;
