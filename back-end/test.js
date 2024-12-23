@@ -4,7 +4,3 @@ var createCounter = function (n) {
   };
 };
 
-let fn = createCounter(10);
-fn();
-fn();
-console.log(fn());
