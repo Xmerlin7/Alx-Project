@@ -1,9 +1,8 @@
-const recursive = (n) => {
-  if (n <= 0) {
-    return;
-  }
-  recursive(n - 1);
-  console.log(n);
+const fact = (n) => {
+  if ((n === 1)) {
+    return 1;
+  }else
+  return n * fact(n - 1);
 };
-
-recursive(5);
+let ans = fact(5)
+console.log(ans);
