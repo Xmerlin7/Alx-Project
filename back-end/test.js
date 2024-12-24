@@ -1,30 +1,9 @@
-const unsortedArray = [34, 7, 23, 32, 5, 62, -9, -1, 45, 19];
-
-const smallest = findSmallest(unsortedArray);
-console.log(unsortedArray[smallest]);
-
-function findSmallest(arr) {
-  let smallest = arr[0];
-  let smallestIndex = 0;
-  for (let i = 1; i < arr.length; i++) {
-    // Changed loop condition
-    if (arr[i] < smallest) {
-      smallest = arr[i];
-      smallestIndex = i;
-    }
+const recursive = (n) => {
+  if (n <= 0) {
+    return; // Base case: stop recursion when n reaches 0 or less
   }
-  return smallestIndex;
+  console.log(n); // Print the current value of n
+  recursive(n - 1); // Call the function with n-1
 }
 
-function selectionSort(arr) {
-  let newArr = [];
-  const originalLength = arr.length; // Avoid dynamic length changes
-  for (let i = 0; i < originalLength; i++) {
-    // Corrected loop
-    let smallest = findSmallest(arr);
-    newArr.push(arr.splice(smallest, 1)[0]); // Extract the value from the returned array
-  }
-  return newArr;
-}
-
-console.log(selectionSort(unsortedArray));
+recursive(5); // Example call with n = 5
