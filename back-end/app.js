@@ -92,7 +92,7 @@ app.delete("/books/:id", async (req, res) => {
   try {
 
     const { id } = req.params;
-    const result = await Book.dleByIdAndDelete(id);
+    const result = await Book.findByIdAndDelete(id);
     if (!result) {
       return res.status(404).json({ message: "book not found" });
     }
