@@ -70,6 +70,24 @@ app.get("/books/:id", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+app.put("/books/:id", async (req, res) => {
+  try {
+    if (!req.body.title || !req.body.author || !req.body.publishYear) {
+      return res.status(400).send({
+        message: "Send all required fields: title, author, publishYear",
+      });
+    }
+    const { id } = req.params;
+    const result = await Book.findByIdAndUpdate(id, req.body);
+    if (!result) {
+      return res.status(404).json({ message: "book not found" });
+    }
+    return res.status(200).send({ message: "Book updated successfully" });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
 // Connect to the MongoDB database and start the server
 mongoose
   .connect(mongoDBURL)
