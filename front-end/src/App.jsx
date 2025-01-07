@@ -1,5 +1,13 @@
+import {Routes, Route} from 'react-router-dom'
 const App = () => {
-  return <div className="bg-red-200 text-white">hello</div>;
-};
+  return (
+    <Routes>
+      <Route path='' element={} /> 
+      <Route path='' element={} /> 
+      <Route path='' element={} /> 
+      <Route path='' element={} /> 
+      <Route path='' element={} /> 
+    </Routes>
+  )
 
 export default App;
