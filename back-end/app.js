@@ -39,10 +39,35 @@ app.post("/books", async (req, res) => {
 app.get("/books", async (req, res) => {
   try {
     const books = await Book.find({});
-    return res.status(200).send(books)
+    return res.status(200).json({
+      count: books.length,
+      data: books,
+    });
   } catch (error) {
     console.log(error.message);
     res.status(500).send({ message: error.message });
+  }
+});
+
+app.get("/books/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const book = await Book.findById(id);
+
+    if (!book) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+
+    return res.status(200).json({ message: "data retrievd", book: book });
+  } catch (error) {
+    console.error(error.message);
+
+    if (error.name === "CastError") {
+      return res.status(400).json({ message: "Invalid book ID" });
+    }
+
+    res.status(500).json({ message: "Server error" });
   }
 });
 // Connect to the MongoDB database and start the server
