@@ -85,7 +85,21 @@ app.put("/books/:id", async (req, res) => {
     return res.status(200).send({ message: "Book updated successfully" });
   } catch (error) {
     console.log(error.message);
-    res.status(500).send({ message: error.message });
+    return res.status(500).send({ message: error.message });
+  }
+});
+app.delete("/books/:id", async (req, res) => {
+  try {
+
+    const { id } = req.params;
+    const result = await Book.dleByIdAndDelete(id);
+    if (!result) {
+      return res.status(404).json({ message: "book not found" });
+    }
+    return res.status(200).send({ message: "Book updated successfully" });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).send({ message: error.message });
   }
 });
 // Connect to the MongoDB database and start the server
