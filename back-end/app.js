@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose"; // Fix the typo here
 import { Book } from "./models/booksModel.js";
@@ -6,20 +6,36 @@ import { Book } from "./models/booksModel.js";
 const app = express();
 
 // Set strictQuery to false to handle the deprecation warning
-mongoose.set('strictQuery', false);
+mongoose.set("strictQuery", false);
 
 // Define a route for the root URL
 app.get("/", (req, res) => {
   console.log(req);
   return res.status(234).send("Book store with MERN");
 });
-
+//? create route for saving a new book
+app.post("/books", async (req, res) => {
+  try {
+    if (!req.body.title || !req.body.author || !eq.body.publishYear) {
+      return res.status(400).send({ message: "Send all required data fiels" });
+    }
+    const newBook = {
+      title: req.body.title,
+      author: req.body.author,
+      publishYear: req.body.publishYear,
+    };
+    const book = await Book.create(newBook)
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
 // Connect to the MongoDB database and start the server
 mongoose
   .connect(mongoDBURL)
   .then(() => {
     console.log("App connected to DB");
-    app.listen(PORT, () => { // Remove unused parameters (req, res) in app.listen
+    app.listen(PORT, () => {
       console.log(`App is listening on port: ${PORT}`);
     });
   })
