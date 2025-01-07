@@ -4,7 +4,7 @@ import mongoose from "mongoose"; // Fix the typo here
 import { Book } from "./models/booksModel.js";
 
 const app = express();
-
+app.use(express.json());
 // Set strictQuery to false to handle the deprecation warning
 mongoose.set("strictQuery", false);
 
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 //? create route for saving a new book
 app.post("/books", async (req, res) => {
   try {
-    if (!req.body.title || !req.body.author || !eq.body.publishYear) {
+    if (!req.body.title || !req.body.author || !req.body.publishYear) {
       return res.status(400).send({ message: "Send all required data fiels" });
     }
     const newBook = {
@@ -24,7 +24,7 @@ app.post("/books", async (req, res) => {
       author: req.body.author,
       publishYear: req.body.publishYear,
     };
-    const book = await Book.create(newBook)
+    const book = await Book.create(newBook);
   } catch (error) {
     console.log(error.message);
     res.status(500).send({ message: error.message });
