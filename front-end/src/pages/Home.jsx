@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
-// import BooksTable from '../components/home/BooksTable';
-// import BooksCard from '../components/home/BooksCard';
+import BooksTable from '../components/home/BooksTable';
+import BooksCard from '../components/home/BooksCard';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -49,13 +49,13 @@ const Home = () => {
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
       </div>
-      {/* {loading ? (
+      {loading ? (
         <Spinner />
       ) : showType === 'table' ? (
         <BooksTable books={books} />
       ) : (
         <BooksCard books={books} />
-      )} */}
+      )}
     </div>
   );
 };
