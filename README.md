@@ -26,18 +26,18 @@
 
 ## Technologies Used
 
-### Frontend:
+- **Frontend**:
 - **React** - JavaScript library for building user interfaces.
 - **Vite** - Fast build tool for React applications.
 - **Tailwind CSS** - Utility-first CSS framework for rapid and flexible design.
 - **React Router** - For managing routes in the React application.
 - **Axios** - For sending HTTP requests to the API.
 
-### Backend:
-- **Node.js** - JavaScript runtime for server-side development.
-- **Express.js** - Web framework for building fast and flexible web applications.
-- **MongoDB** - NoSQL database for storing data.
-- **Mongoose** - Library for interacting with MongoDB in Node.js.
+- **Backend**:
+  - Create, Read, Update, Delete (CRUD) Books using RESTful APIs.
+  - Mongoose for MongoDB interactions.
+  - Express.js for routing and middleware.
+  - CORS policy handled for secure communication.
 
 ### Other Tools:
 - **Postman** - For testing the API.
