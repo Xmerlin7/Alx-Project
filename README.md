@@ -55,5 +55,5 @@
 
 1. **Clone the Project**:
    ```bash
-   git clone https://github.com/Xmerlin7/book-store-mern.git
-   cd book-store-mern
+   git clone https://github.com/Xmerlin7/Alx-Project.git
+   cd Alx-Project
