@@ -26,14 +26,14 @@
 
 ## Technologies Used
 
-- **Frontend**:
+### **Frontend**:
 - **React** - JavaScript library for building user interfaces.
 - **Vite** - Fast build tool for React applications.
 - **Tailwind CSS** - Utility-first CSS framework for rapid and flexible design.
 - **React Router** - For managing routes in the React application.
 - **Axios** - For sending HTTP requests to the API.
 
-- **Backend**:
+### **Backend**:
   - Create, Read, Update, Delete (CRUD) Books using RESTful APIs.
   - Mongoose for MongoDB interactions.
   - Express.js for routing and middleware.
