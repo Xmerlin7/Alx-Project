@@ -36,7 +36,14 @@ app.post("/books", async (req, res) => {
     res.status(500).send({ message: error.message });
   }
 });
-
+app.get("/books", async (req, res) => {
+  try {
+    const books = await Book.find({});
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
 // Connect to the MongoDB database and start the server
 mongoose
   .connect(mongoDBURL)
